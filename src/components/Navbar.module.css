@@ -1,0 +1,22 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.brand {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #3b2cf0;
+}
+.links a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s;
+}
+.links a:hover {
+  color: #3b2cf0;
+}

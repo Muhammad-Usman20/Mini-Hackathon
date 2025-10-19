@@ -1,0 +1,671 @@
+/* =============================
+   DASHBOARD BASE STYLING
+   ============================= */
+.dashboardContainer {
+    padding: 2rem;
+    background: linear-gradient(135deg, #eef1ff, #f9faff);
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    transition: background 0.3s ease;
+}
+
+/* =============================
+   HEADER
+   ============================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #3b2cf0, #7a6ff0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logoutButton {
+    background: #3b2cf0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.logoutButton:hover {
+    background: #2d22c7;
+    transform: scale(1.05);
+}
+
+/* =============================
+   FORM
+   ============================= */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    animation: slideUp 0.6s ease-out;
+}
+
+.form label {
+    font-weight: 600;
+    color: #333;
+}
+
+.form textarea,
+.form input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1.5px solid #d2d6f0;
+    font-size: 15px;
+    resize: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form textarea:focus,
+.form input:focus {
+    border-color: #3b2cf0;
+    box-shadow: 0 0 4px rgba(59, 44, 240, 0.2);
+    outline: none;
+}
+
+.form button {
+    background: #3b2cf0;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.form button:hover {
+    background: #2f23cf;
+    transform: translateY(-2px);
+}
+
+.error {
+    color: #ff4d4d;
+    text-align: center;
+    font-size: 14px;
+    animation: fadeIn 0.5s ease;
+}
+
+/* =============================
+   RESULT SECTION
+   ============================= */
+.result {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.result:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.result h2 {
+    font-size: 1.8rem;
+    color: #2a2a2a;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.pitchCard {
+    display: grid;
+    gap: 1rem;
+    color: #333;
+}
+
+.pitchItem {
+    background: #f8f9ff;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    border-left: 4px solid #3b2cf0;
+    animation: slideFadeIn 0.6s ease forwards;
+}
+
+.pitchItem strong {
+    color: #3b2cf0;
+    display: inline-block;
+    min-width: 100px;
+}
+
+.hero {
+    text-align: center;
+    background: linear-gradient(135deg, #3b2cf0, #7a6ff0);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    animation: fadeInUp 0.7s ease;
+}
+
+.hero h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.hero p {
+    margin: 0.3rem 0 0;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* =============================
+   LOADING SCREEN
+   ============================= */
+.loadingScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 18px;
+    color: #3b2cf0;
+    animation: pulse 1.5s infinite;
+}
+
+/* =============================
+   RESPONSIVE DESIGN
+   ============================= */
+@media (max-width: 768px) {
+    .dashboardContainer {
+        padding: 1rem;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .form {
+        padding: 1.5rem;
+    }
+
+    .result {
+        padding: 1.5rem;
+    }
+
+    .pitchItem {
+        font-size: 14px;
+    }
+
+    .hero h3 {
+        font-size: 1.3rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .form,
+    .result {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .logoutButton {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .form button {
+        font-size: 14px;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* =============================
+   ANIMATIONS
+   ============================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* =============================
+   EXTRA SMALL SCREENS (≤ 360px)
+   ============================= */
+@media (max-width: 360px) {
+  .dashboardContainer {
+    padding: 0.8rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .header h1 {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
+  .logoutButton {
+    align-self: flex-end;
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .form {
+    padding: 1rem;
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .form label {
+    font-size: 13px;
+  }
+
+  .form textarea,
+  .form input {
+    font-size: 13px;
+    padding: 8px;
+    border-radius: 6px;
+  }
+
+  .form button {
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .result {
+    padding: 1rem;
+    width: 100%;
+    margin-top: 1.2rem;
+  }
+
+  .result h2 {
+    font-size: 1.3rem;
+  }
+
+  .pitchCard {
+    gap: 0.6rem;
+  }
+
+  .pitchItem {
+    padding: 0.8rem;
+    font-size: 13px;
+    border-left-width: 3px;
+  }
+
+  .pitchItem strong {
+    min-width: 80px;
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 1rem;
+  }
+
+  .hero h3 {
+    font-size: 1.1rem;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 90%;
+  }
+  .dashboardContainer {
+    padding: 0.8rem;
+  }
+  .form,
+  .result {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =============================
+   ULTRA-SMALL SCREENS (≤ 360 px)
+   ============================= */
+
+:root, html, body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Main container */
+.dashboardContainer {
+  padding: 0.8rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Header: stack title & button */
+.header {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.header h1 {
+  font-size: 1.2rem;
+  line-height: 1.1;
+  word-break: break-word;
+  white-space: normal;
+}
+
+/* Logout button smaller */
+.logoutButton {
+  font-size: 12px;
+  padding: 6px 12px;
+  align-self: flex-end;
+}
+
+/* Form box */
+.form {
+  padding: 1rem;
+  width: 100%;
+  gap: 0.8rem;
+  border-radius: 10px;
+}
+
+.form label {
+  /* font-size: 13px; */
+}
+
+.form textarea,
+.form input {
+  font-size: 13px;
+  padding: 8px;
+  border-radius: 6px;
+  width: 100%;
+  resize: none;
+}
+
+.form button {
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+}
+
+/* Generated pitch card */
+.result {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-top: 1.2rem;
+  max-width: 100%;
+}
+
+.resultTitle {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+/* Each pitch field */
+.pitchCard {
+  gap: 0.6rem;
+}
+
+.pitchItem {
+  padding: 0.8rem;
+  font-size: 13px;
+  border-left-width: 3px;
+  word-break: break-word;
+  white-space: pre-line;
+}
+
+/* Hero section */
+.hero {
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.hero h3 {
+  font-size: 1.1rem;
+}
+
+.hero p {
+  font-size: 0.85rem;
+}
+
+/* Copy button */
+.copyButton {
+  width: 100%;
+  font-size: 13px;
+  padding: 10px;
+}
+
+/* Prevent any horizontal overflow */
+body, .dashboardContainer, .form, .result, .pitchCard, .hero {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem); /* auto scales with screen size */
+  font-weight: 800;
+  background: linear-gradient(90deg, #3b2cf0, #7a6ff0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  margin: 0;
+  animation: floatIn 0.8s ease-in-out;
+}
+
+/* Subtle float-in animation */
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* ======= Header styling ======= */
+.header {
+  display: flex;
+  justify-content: space-between; /* keeps h1 left, button right */
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 1rem auto;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #f7f8ff, #eef1ff);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* “PitchCraft” heading */
+.header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  background: linear-gradient(90deg, #3b2cf0, #7a6ff0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  margin: 0;
+  animation: floatIn 0.8s ease-in-out;
+   font-size: 2.5rem;
+  font-weight: 800;
+  color: #3b2cf0;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* ======= Logout button ======= */
+.logoutButton {
+  background: linear-gradient(135deg, #3b2cf0, #7a6ff0);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(59, 44, 240, 0.25);
+  transition: all 0.25s ease-in-out;
+  background: linear-gradient(135deg, #3b2cf0, #5a4df3);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 22px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(59, 44, 240, 0.3);
+  transition: all 0.2s ease;
+}
+
+.logoutButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(59, 44, 240, 0.35);
+  background: linear-gradient(135deg, #2d22c7, #6a5ef5);
+}
+
+/* Responsive: stack button under heading on small screens */
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .logoutButton {
+    width: 100%;
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 10px 0;
+  }
+}
+
+/* Optional heading animation */
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
